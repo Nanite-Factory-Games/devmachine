@@ -6,10 +6,10 @@ LABEL whaledrive.bootloader.path=/usr/share/syslinux/mbr.bin
 # Install Docker, the kernel and the syslinux bootloader
 RUN apk update && apk add docker linux-virt syslinux
 
-# Override the extlinux conf file with one with no timeout
-ADD extlinux.conf /boot/extlinux.conf
+# Override the syslinux conf file with one with no timeout
+COPY syslinux.conf /boot/syslinux.cfg
 
-ADD entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 
