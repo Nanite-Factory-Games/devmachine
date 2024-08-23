@@ -7,7 +7,7 @@ LABEL whaledrive.bootloader.path=/usr/share/syslinux/mbr.bin
 RUN apk update && apk add docker linux-virt syslinux
 
 # Override the syslinux conf file with one with no timeout
-COPY syslinux.conf /boot/syslinux.cfg
+COPY syslinux.cfg /boot/syslinux.cfg
 
 COPY entrypoint.sh /entrypoint.sh
 
