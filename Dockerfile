@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 # This tells whaledrive where to find the bootloader
-LABEL whaledrive.bootloader.path=/usr/share/syslinux/gptmbr.bin
+LABEL whaledrive.bootloader.path=/usr/share/syslinux/mbr.bin
 
 # Install Docker, the kernel and the syslinux bootloader
 RUN apk update && apk add docker linux-virt syslinux
